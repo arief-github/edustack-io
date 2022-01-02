@@ -1,0 +1,117 @@
+body {
+    font-family: "Poppins", sans-serif;
+    height: 110vh;
+}
+
+body::before {
+    display: block;
+    content: "";
+    height: 60px;
+}
+
+.text-purple {
+    color: #482683;
+}
+
+
+/* card hover */
+.card-body:hover {
+    background-color: #482683;
+    color: white;
+    transition: all 400ms linear;
+}
+
+
+/* .card-body:hover{
+	border-top: 6px solid #fb527a;
+	padding-top: 45px;
+	box-shadow: 0 5px 15px rgb(0,0,0/10%);
+	transition: all 0.3s ease-in-out;
+} */
+
+
+/* Styling Paket */
+
+.feature-text {
+    /* box model */
+    padding: 50px;
+    margin-bottom: 30px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    /* transition */
+    transition: all 0.3s ease-in-out;
+}
+
+.feature-text h4 {
+    margin: 40px 0;
+}
+
+.feature-text:hover {
+    /* when card clicked, border top will appear */
+    border-top: 6px solid #fb527a;
+    /* when card clicked, content will move top */
+    padding-top: 45px;
+    /* when card clicked, box shadow will appear */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* End Styling Paket */
+
+/* ul style */
+ul {
+    list-style-image: url('../img/checklist.png');
+}
+
+
+
+/* Reel Effect */
+.reel {
+    --space: 1rem;
+    --itemWidth: auto;
+    --height: auto;
+    --trackColor: #fff;
+    --thumbColor: lightcoral;
+    display: flex;
+    /* ↓ For images, which may be very large or use differing aspect ratios, we may want to set the Reel’s height. */
+    height: var(--height);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-color: var(--thumbColor) var(--trackColor);
+}
+
+.reel::-webkit-scrollbar {
+    height: 1rem;
+}
+
+.reel::-webkit-scrollbar-track {
+    background-color: var(--trackColor);
+}
+
+.reel::-webkit-scrollbar-thumb {
+    background-color: var(--trackColor);
+    background-image: linear-gradient(var(--trackColor) 0,
+        var(--trackColor) 0.25rem,
+        var(--thumbColor) 0.25rem,
+        var(--thumbColor) 0.75rem,
+        var(--trackColor) 0.75rem);
+}
+
+.reel>* {
+    flex: 0 0 var(--itemWidth);
+}
+
+.reel>img {
+    height: 100%;
+    flex-basis: auto;
+    width: auto;
+}
+
+.reel>*+* {
+    margin-left: var(--space);
+}
+
+.reel.overflowing {
+    padding-bottom: var(--space);
+}
